@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер изображений</title>
+
+    <style>
+        #slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #image {
+            width: 450px;
+            height: 600px;
+        }
+        body{background-image: url("../image/fon_2.jpg");}
+    </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -12,15 +29,74 @@
         </nav>
     </header>
     <br>
-    <h4>Портрет</h4>
-    <img src="../image/2.jpg" width="420" height="600">
-    <img src="../image/3.jpg" width="420" height="600">
-    <img src="../image/4.jpg" width="470" height="600">
-    <img src="../image/5.jpg" width="550" height="600">
-    <img src="../image/666.jpg" width="420" height="600">
+    <h3>Портрет</h3>
+
+    <div id="slider-container">
+        <button id="previous">Предыдущее</button>
+        <img id="image" src="../image/2.jpg" />
+        <button id="next">Следующее</button>
+    </div>
+     
+    <script>
+        const imagesUrls = [
+            "../image/2.jpg",
+            "../image/3.jpg",
+            "../image/4.jpg",
+            "../image/5.jpg",
+            "../image/666.jpg"
+        ];
+
+        
+        let currentIndex = 0;
+
+        
+        const imageElement = document.querySelector("#image");
+        imageElement.src = imagesUrls[currentIndex];
+
+        
+        function nextImageHandler() {
+            
+            currentIndex++;
+
+             
+            if (currentIndex >= imagesUrls.length) {
+                currentIndex = 0;
+            }
+
+            
+            imageElement.src = imagesUrls[currentIndex];
+        }
+
+        
+        function previousImageHandler() {
+            
+            currentIndex--;
+
+             
+            if (currentIndex < 0) {
+                currentIndex = imagesUrls.length - 1;
+            }
+
+            
+            imageElement.src = imagesUrls[currentIndex];
+        }
+
+    
+        const nextButton = document.querySelector("#next");
+        nextButton.addEventListener("click", nextImageHandler);
+
+        const previousButton = document.querySelector("#previous");
+        previousButton.addEventListener("click", previousImageHandler);
+    </script>
+    
     <h4>LoveStory</h4>
+
     <img src="../image/lovestory01.jpg" width="600">
+    <img src="../image/lovestory02.jpg" width="600">
+    <img src="../image/lovestory03.jpg " width="600">
     <h4>Свадебная фотоссесия</h4>
     <img src="../image/свадьба.jpg" width="600">
+    <img src="../image/wedding_2.jpg" width="600">
+    <img src="../image/wedding_3.jpg" width="600">
 </body>
 </html>
