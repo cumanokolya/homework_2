@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Слайдер изображений</title>
-
-    <style>
+    <link href="../styles_2.css" type="text/css" rel="stylesheet">
+    <!-- <style>
         #slider-container {
             display: flex;
             align-items: center;
@@ -17,7 +17,9 @@
             height: 600px;
         }
         body{background-image: url("../image/fon_2.jpg");}
-    </style>
+        #foto{color: rgb(230, 23, 33);}
+        .center {text-align: center;}
+    </style> -->
 </head>
 
 <body>
@@ -29,7 +31,7 @@
         </nav>
     </header>
     <br>
-    <h3>Портрет</h3>
+    <h3 id="foto" class="center">Портрет</h3>
 
     <div id="slider-container">
         <button id="previous">Предыдущее</button>
@@ -89,12 +91,12 @@
         previousButton.addEventListener("click", previousImageHandler);
     </script>
     
-    <h4>LoveStory</h4>
+    <h4 id="foto" class="center">LoveStory</h4>
 
     <img src="../image/lovestory01.jpg" width="600">
     <img src="../image/lovestory02.jpg" width="600">
     <img src="../image/lovestory03.jpg " width="600">
-    <h4>Свадебная фотоссесия</h4>
+    <h4 id="foto" class="center">Свадебная фотоссесия</h4>
     <img src="../image/свадьба.jpg" width="600">
     <img src="../image/wedding_2.jpg" width="600">
     <img src="../image/wedding_3.jpg" width="600">

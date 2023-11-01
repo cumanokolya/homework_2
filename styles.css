@@ -1,2 +1,7 @@
-body{background-image: url(../image/fon_1.jpg);}
+body {
+    background-image: url(./image/fon_1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.center {text-align: center; color:darkblue}
 *{font-size: 20px; font-family: 'Times New Roman', Times, serif;}
